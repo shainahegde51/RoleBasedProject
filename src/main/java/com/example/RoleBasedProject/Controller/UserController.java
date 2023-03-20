@@ -30,4 +30,11 @@ public class UserController {
     public String addUser(){
         return  "New User Added";
     }
+
+
+    //Its a public api where both user and admin can use it
+    @GetMapping({"/"})
+    public String publicPage(){
+        return "Welcome to the public page";
+    }
 }
