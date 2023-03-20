@@ -15,7 +15,7 @@ Runtime version: 11.0.15+10-b2043.56 amd64)
 
 Steps to run the apis
 
-1. "/addUser" (This api will help us to register new user and this can be accessed by anyone)
+1. "/addUser" (This api will help us to register new user and this can be accessed by anyUser (admin/user))
 
 *Open PostMan
 
@@ -30,7 +30,7 @@ Steps to run the apis
 check this out :https://drive.google.com/file/d/1WeS9I6Iehv8LfDbP_siuCyUWwSBauevx/view?usp=share_link
 
 
-2."/welcome" (Its a public api )
+2."/welcome" (Its a public api which is accessible by anyUser (admin/user))
 
 *Open PostMan
 
