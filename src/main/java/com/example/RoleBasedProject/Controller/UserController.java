@@ -25,6 +25,7 @@ public class UserController {
     //This api can be used only by admin
     @GetMapping({"/admin"})
     public String admin(){
+
         return "Hi welcome to the Admin Page";
     }
 
@@ -41,5 +42,7 @@ public class UserController {
     @GetMapping({"/"})
     public String publicPage(){
         return "Welcome to the public page";
+
     }
-}
+    }
+

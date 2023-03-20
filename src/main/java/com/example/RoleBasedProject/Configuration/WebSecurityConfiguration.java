@@ -42,7 +42,7 @@ public class WebSecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws  Exception{
         http.authorizeRequests()
-                .antMatchers( "/addUser").hasAnyAuthority("user","admin")
+                .antMatchers( "/addUser").permitAll()
                 .antMatchers("/")
                 .permitAll()
                 .antMatchers("/user")
@@ -53,6 +53,7 @@ public class WebSecurityConfiguration {
                 .authenticated() //any request that comes to /user and /admin has to be authenticated
                 .and()
                 .httpBasic();
+        http.csrf().disable();
         return http.build();
     }
 
