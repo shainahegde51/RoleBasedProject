@@ -34,5 +34,21 @@ public class WebSecurityConfiguration {
         return  provider;
     }
 
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws  Exception{
+        http.authorizeRequests()
+                .antMatchers( "/addUser").hasAnyAuthority("user","admin")
+                .antMatchers("/")
+                .permitAll()
+                .antMatchers("/user")
+                .hasAuthority("user")  // /user is only accessible by user
+                .antMatchers("/admin")
+                .hasAuthority("admin")// /admin is only accessible by admin
+                .anyRequest()
+                .authenticated() //any request that comes to /user and /admin has to be authenticated
+                .and()
+                .httpBasic();
+        return http.build();
+    }
 
 }

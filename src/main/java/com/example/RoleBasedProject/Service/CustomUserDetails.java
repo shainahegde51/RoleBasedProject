@@ -13,7 +13,7 @@ import java.util.Collections;
 
 //Currently we are concentrating on username,password,role .so I'm setting rest everything to true
 
-@Component
+
 public class CustomUserDetails implements UserDetails {
 
 
