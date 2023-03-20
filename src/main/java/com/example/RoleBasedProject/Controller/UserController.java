@@ -1,5 +1,7 @@
 package com.example.RoleBasedProject.Controller;
 
+import com.example.RoleBasedProject.Entity.User;
+import com.example.RoleBasedProject.Service.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserController {
 
+    @Autowired
+    private UserDetailsServiceImpl userDetailsService;
 
     //This api can only be used by user
     @GetMapping({"/user"})
@@ -27,7 +31,8 @@ public class UserController {
 
     //Its a public api where both user and admin can use it
     @PostMapping({"/addUser"})
-    public String addUser(){
+    public String addUser(@RequestBody User user){
+        userDetailsService.createUser(user);
         return  "New User Added";
     }
 

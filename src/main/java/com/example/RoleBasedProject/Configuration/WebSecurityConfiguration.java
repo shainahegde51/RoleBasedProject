@@ -19,6 +19,11 @@ public class WebSecurityConfiguration {
     private UserDetailsService userDetailsService;
 
     @Bean
+    public BCryptPasswordEncoder bCryptPasswordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
+    @Bean
     AuthenticationProvider authenticationProvider() {
         //We will be getting the data from the database so here we are using DaoAuthenticationProvider
         // where Dao stands for Data Access Object
