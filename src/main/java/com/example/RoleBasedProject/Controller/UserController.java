@@ -39,9 +39,9 @@ public class UserController {
 
 
     //Its a public api where both user and admin can use it
-    @GetMapping({"/"})
+    @GetMapping({"/website"})
     public String publicPage(){
-        return "Welcome to the public page";
+        return "Welcome to our website";
 
     }
     }

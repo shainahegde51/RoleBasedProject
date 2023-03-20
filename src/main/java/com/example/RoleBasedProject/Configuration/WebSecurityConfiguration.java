@@ -43,7 +43,7 @@ public class WebSecurityConfiguration {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws  Exception{
         http.authorizeRequests()
                 .antMatchers( "/addUser").permitAll()
-                .antMatchers("/")
+                .antMatchers("/website")
                 .permitAll()
                 .antMatchers("/user")
                 .hasAuthority("user")  // /user is only accessible by user
